@@ -42,9 +42,6 @@ function OnOff(props: ButtonPropsType) {
             <div style={onStyle} onClick={ () => {setTurn(true)}}> On</div>
             <div style={offStyle} onClick={ () => {setTurn(false)}}>Off</div>
             <div style={indicatorStyle}>{}</div>
-            {/*<div className={'switchOn'}> On</div>
-            <div className={'switchOff'}>Off</div>
-            <div className={'indicator'}>{}</div>*/}
         </div>
     )
 }
