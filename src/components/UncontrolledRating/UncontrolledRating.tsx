@@ -20,15 +20,15 @@ function UncontrolledRating(props: UncontrolledRatingPropsType) {
 
 type StarPropsType = {
 selected: boolean
-    value: 1 | 2 | 3 | 4 | 5
-    setValue: (value:  1 | 2 | 3 | 4 | 5) => void
+    value: 0 | 1| 2 | 3 | 4 | 5
+        setValue: (value: 0 | 1| 2 | 3 | 4 | 5) => void
 }
 
   function Star(props: StarPropsType) {
          console.log('Star rendering')
 
    return <span onClick={() => {props.setValue(props.value)}}>
-       {props.selected ? <b>star </b> : 'star '}
+       {props.selected ? <b>star</b> : 'star'}
          </span>
   }
 
