@@ -4,27 +4,32 @@ import Rating, {RatingValueType} from './components/Rating/Rating';
 import OnOff from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating';
+import Accordion from './components/Accordion/Accordion';
+import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
 
 function App() {
 
     let[ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [collapsedAccordion,  setCollapsedAccordion] = useState<boolean>(false)
+    let [turn, setTurn] = useState(false);
+
   return (
     <div className='App'>
-      {/*<PageTitle title={'Hello, Elena'}/>
-      <PageTitle title={'My friends'}/>*/}
-      <Rating value={ratingValue} onClickChange={setRatingValue}/>
-    {/* <UncontrolledAccordion titleValue={'Menu'}/>
+        <Accordion titleValue={'Menu'} collapsed={collapsedAccordion} onChange={() => {setCollapsedAccordion(!collapsedAccordion)}} />
+        <Rating value={ratingValue} onClickChange={setRatingValue}/>
+        <UncontrolledRating />
+        <OnOff turn={turn} setTurn={setTurn}/>
+        <UncontrolledOnOff onChange={setTurn}/> {turn.toString()}
       <UncontrolledAccordion titleValue={'Users'} />
-        <UncontrolledRating/>*/}
-     {/*<Rating value={0}/>
+        {/*<Rating value={0}/>
       <Rating value={1}/>
       <Rating value={2}/>
       <Rating value={3}/>
       <Rating value={4}/>
       <Rating value={5}/>*/}
-        {/*<OnOff />
-        <OnOff  />
-        <OnOff  />*/}
+        {/*<OnOff  />*/}
+        {/*<PageTitle title={'Hello, Elena'}/>
+      <PageTitle title={'My friends'}/>*/}
     </div>
   );
 }

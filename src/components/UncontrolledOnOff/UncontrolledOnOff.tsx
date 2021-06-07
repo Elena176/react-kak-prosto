@@ -1,22 +1,21 @@
 import React, {useState} from 'react';
-import './OnOff.css'
+import './UncontrolledOnOff.css'
 
 type ButtonPropsType = {
-  turn: boolean
-    setTurn: (turn: boolean) => void
+onChange: (turn: boolean) => void
 }
 
 
-function OnOff(props: ButtonPropsType) {
+function UncontrolledOnOff(props: ButtonPropsType) {
 
-    //let [turn, setTurn] = useState(false);
+    let [turn, setTurn] = useState(false);
     const onStyle = {
         width: '30px',
         height: '20px',
         border: '1px solid black',
         display: 'inline-block',
         padding: '2px',
-        backgroundColor: props.turn ? 'aquamarine' : 'white'
+        backgroundColor: turn ? 'aquamarine' : 'white'
     };
 
     const offStyle = {
@@ -26,7 +25,7 @@ function OnOff(props: ButtonPropsType) {
         display: 'inline-block',
         marginLeft: '2px',
         padding: '2px',
-        backgroundColor: props.turn ? 'white' : 'red'
+        backgroundColor: turn ? 'white' : 'red'
     };
     const indicatorStyle = {
         width: '10px',
@@ -35,16 +34,26 @@ function OnOff(props: ButtonPropsType) {
         border: '1px solid black',
         display: 'inline-block',
         marginLeft: '5px',
-        backgroundColor: props.turn ? 'aquamarine' : 'red'
+        backgroundColor: turn ? 'aquamarine' : 'red'
     };
+
+    const onClicked = () => {
+        setTurn(true)
+            props.onChange(true)
+    }
+
+    const offClicked = () => {
+        setTurn(false)
+        props.onChange(false)
+    }
 
     return (
         <div>
             <div style={onStyle}
-                 onClick={() => {props.setTurn(true)}}> On
+                 onClick={onClicked}> On
             </div>
             <div style={offStyle}
-                 onClick={() => {props.setTurn(false)}}>Off
+                 onClick={offClicked}>Off
             </div>
             <div style={indicatorStyle}>{}</div>
         </div>
@@ -52,4 +61,4 @@ function OnOff(props: ButtonPropsType) {
 }
 
 
-export default OnOff;
+export default UncontrolledOnOff;
