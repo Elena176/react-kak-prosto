@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
 import Rating, {RatingValueType} from './components/Rating/Rating';
-import OnOff from './components/OnOff/OnOff';
-import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
-import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating';
-import Accordion from './components/Accordion/Accordion';
-import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
+import {OnOff} from './components/OnOff/OnOff';
+import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
+import {Accordion} from './components/Accordion/Accordion';
+import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 
 function App() {
 
@@ -17,9 +17,9 @@ function App() {
     <div className='App'>
         <Accordion titleValue={'Menu'} collapsed={collapsedAccordion} onChange={() => {setCollapsedAccordion(!collapsedAccordion)}} />
         <Rating value={ratingValue} onClickChange={setRatingValue}/>
-        <UncontrolledRating />
+        <UncontrolledRating onChange={setRatingValue}/>
         <OnOff turn={turn} setTurn={setTurn}/>
-        <UncontrolledOnOff onChange={setTurn}/> {turn.toString()}
+        <UncontrolledOnOff defaultOn={collapsedAccordion} onChange={setTurn}/> {turn.toString()}
       <UncontrolledAccordion titleValue={'Users'} />
         {/*<Rating value={0}/>
       <Rating value={1}/>

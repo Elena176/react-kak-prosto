@@ -7,7 +7,7 @@ type ButtonPropsType = {
 }
 
 
-function OnOff(props: ButtonPropsType) {
+export function OnOff(props: ButtonPropsType) {
 
     //let [turn, setTurn] = useState(false);
     const onStyle = {
@@ -49,7 +49,6 @@ function OnOff(props: ButtonPropsType) {
             <div style={indicatorStyle}>{}</div>
         </div>
     )
-}
+};
 
 
-export default OnOff;

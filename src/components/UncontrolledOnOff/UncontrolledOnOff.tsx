@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import './UncontrolledOnOff.css'
 
 type ButtonPropsType = {
+    defaultOn: boolean
 onChange: (turn: boolean) => void
 }
 
 
-function UncontrolledOnOff(props: ButtonPropsType) {
+export function UncontrolledOnOff(props: ButtonPropsType) {
 
-    let [turn, setTurn] = useState(false);
+    let [turn, setTurn] = useState(props.defaultOn ? props.defaultOn : false);
     const onStyle = {
         width: '30px',
         height: '20px',
@@ -58,7 +59,4 @@ function UncontrolledOnOff(props: ButtonPropsType) {
             <div style={indicatorStyle}>{}</div>
         </div>
     )
-}
-
-
-export default UncontrolledOnOff;
+};
