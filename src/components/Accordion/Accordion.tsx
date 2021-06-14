@@ -4,6 +4,9 @@ export type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
     onChange: () => void
+    /**
+     * elements that are showed when accordion is opened (not collapsed)
+     */
 }
 
  export function Accordion (props: AccordionPropsType) {
