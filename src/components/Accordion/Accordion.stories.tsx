@@ -38,9 +38,11 @@ UsersUnCollapsedMode.args = {
     ...callbacksProps,
     titleValue: 'Users',
     collapsed: false,
-    items: [{title: 'Elena',value: 1},
+    items: [
+        {title: 'Elena',value: 1},
         {title: 'Denis', value: 2},
-        {title: 'Nastya', value: 3}]
+        {title: 'Nastya', value: 3}
+    ]
 
 }
 
